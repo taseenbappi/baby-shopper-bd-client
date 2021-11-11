@@ -2,6 +2,7 @@ import React from 'react';
 import './banner.css';
 import img1 from "../../../images/discount/banner1.webp";
 import img2 from "../../../images/discount/bannner3.webp";
+import { Link } from 'react-router-dom';
 
 
 const Banner = () => {
@@ -12,7 +13,7 @@ const Banner = () => {
                     <div className="banner d-flex justify-content-center align-items-center  flex-column">
                         <h1 className="banner-title">Pick The Best Toy For Your Kids!!</h1>
 
-                        <button className="btn btn-warning">Explore Our Shop</button>
+                        <Link to="/toys"><button className="btn btn-warning">Explore Our Toys</button></Link>
 
                     </div>
                 </div>

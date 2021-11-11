@@ -1,0 +1,13 @@
+.our-toy-title{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(197, 100, 55) 0%, rgb(255, 215, 104) 100%, rgba(157,157,157,1) 100%, rgba(136,136,136,1) 100%);
+    height: 150px;
+}
+.our-toy-title h2{
+    font-weight: 800;
+    font-size: 45px;
+    font-family: 'Baloo Paaji 2', cursive; ;
+}
+.our-toy-title{
+    color: #ffffff;
+}
