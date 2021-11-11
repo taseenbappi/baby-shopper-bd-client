@@ -1,0 +1,37 @@
+.banner{
+    height: 80vh;
+    background-image: url(../../../images/banner-bg-1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(121, 121, 121, 0.8);
+    background-size: cover;
+    width: 100%;
+    background-blend-mode:multiply;
+}
+.banner-title{
+    font-size: 50px;
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(247, 247, 247);
+    padding: 20px;
+}
+.banner-side1{
+     height: 40vh;
+    background-image: url(../../../images/discount/banner1.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(121, 121, 121, 0.5);
+    background-size: cover;
+    background-blend-mode:multiply;
+    width: 100%;
+}
+.banner-side2{
+    height: 40vh;
+    background-image: url(../../../images/discount/banner2.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(121, 121, 121, 0.5);
+    background-size: cover;
+    background-blend-mode:multiply;
+    width: 100%;
+}
