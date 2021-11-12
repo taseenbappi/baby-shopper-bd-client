@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import useToys from '../../../Hooks/useToys';
+import Navigation from '../../Shared/Navigation/Navigation';
 import Toy from '../Toy/Toy';
 import './Toys.css';
 
@@ -11,7 +12,8 @@ const Toys = () => {
     }
     return (
 
-        <div className="container-fluid py-3 bg-light ">
+        <div className="container-fluid bg-light p-0 ">
+            <Navigation></Navigation>
             <div className="our-toy-title d-flex align-items-center justify-content-center p-0">
                 <h2 className='fw-bolder '>Our Toys <hr className="w-75 m-auto" /></h2>
 

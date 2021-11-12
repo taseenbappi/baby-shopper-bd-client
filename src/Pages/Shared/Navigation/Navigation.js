@@ -17,16 +17,11 @@ const Navigation = () => {
 
           </Nav>
           <Nav>
-
-            <NavDropdown title="Dashboard" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-            </NavDropdown>
             {user.email &&
-              <Nav.Link>{user.displayName}</Nav.Link>
+              <Nav.Link as={Link} to="/dashboard" className="text-light">Dashboard</Nav.Link>
+            }
+            {user.email &&
+              <Nav.Link className="text-warning">{user.displayName}</Nav.Link>
             }
             <Nav.Link as={Link} to="/register">
               <button className="btn btn-warning">Register</button>
@@ -40,12 +35,7 @@ const Navigation = () => {
                 (<Nav.Link as={Link} to="/login">
                   <button className="btn btn-light">Sign In</button>
                 </Nav.Link>)
-
             }
-
-
-
-
           </Nav>
         </Navbar.Collapse>
       </Container>

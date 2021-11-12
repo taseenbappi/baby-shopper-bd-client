@@ -10,7 +10,7 @@ const Toy = (props) => {
             <div className="card h-100">
                 <img src={image_url} className="card-img-top img-fluid toy-img" alt="..." />
                 <div className="card-body">
-                    <h5 className="card-title">{product_title}</h5>
+                    <h5 className="card-title product-title">{product_title}</h5>
                     <p className="card-text">{description}</p>
                     <h6>Price: ${price}</h6>
 

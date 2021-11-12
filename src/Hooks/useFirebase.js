@@ -8,31 +8,45 @@ import {
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import authInit from "../Pages/Login/Firebase/firebase.init";
+import axios from 'axios';
 
 authInit();
 
 const useFirebase = () => {
 
     const [user, setUser] = useState({});
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
     const auth = getAuth();
 
-
     // user email and password register hangler
-    const registerHangler = (name, email, password) => {
+    const registerHangler = (name, email, password, location, myHistory) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
 
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
+                const newUser = { displayName: name, email };
+                setUser(newUser);
+
+                // send user info to database
+                axios.post('http://localhost:5000/users', newUser)
+                    .then(function (response) {
+
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
                 setAuthError("");
+                const destination = location?.state?.from || "/home";
+                myHistory.replace(destination);
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(() => {
                     // Profile updated!
-                    setUser(user);
+
+
                 }).catch((error) => {
                     // An error occurred
                     const errorMessage = error.message;
@@ -56,7 +70,12 @@ const useFirebase = () => {
                 const user = userCredential.user;
                 setUser(user);
                 const destination = location?.state?.from || "/home";
-                myHistory.push(destination);
+                if (email === "admin@admin.com") {
+                    myHistory.push('/dashboard');
+                } else {
+                    myHistory.replace(destination);
+                }
+                // myHistory.replace(destination);
                 setAuthError("");
 
                 // ...

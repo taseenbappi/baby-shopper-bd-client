@@ -15,23 +15,3 @@
     color: rgb(247, 247, 247);
     padding: 20px;
 }
-.banner-side1{
-     height: 40vh;
-    background-image: url(../../../images/discount/banner1.webp);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: rgba(121, 121, 121, 0.5);
-    background-size: cover;
-    background-blend-mode:multiply;
-    width: 100%;
-}
-.banner-side2{
-    height: 40vh;
-    background-image: url(../../../images/discount/banner2.webp);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: rgba(121, 121, 121, 0.5);
-    background-size: cover;
-    background-blend-mode:multiply;
-    width: 100%;
-}

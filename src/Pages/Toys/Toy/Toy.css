@@ -2,3 +2,8 @@
     width: 80%;
     padding: 10px;
 }
+.product-title{
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: 800;
+    font-size: 28px;
+}
