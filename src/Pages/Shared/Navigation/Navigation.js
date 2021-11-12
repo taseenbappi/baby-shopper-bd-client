@@ -1,9 +1,11 @@
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 import './Navigation.css';
 
 const Navigation = () => {
+  const { user, logOut } = useAuth();
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
       <Container fluid>
@@ -15,6 +17,7 @@ const Navigation = () => {
 
           </Nav>
           <Nav>
+
             <NavDropdown title="Dashboard" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -22,15 +25,24 @@ const Navigation = () => {
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#deets">
-              <button className="btn btn-warning">Sign In</button>
+            {user.email &&
+              <Nav.Link>{user.displayName}</Nav.Link>
+            }
+            <Nav.Link as={Link} to="/register">
+              <button className="btn btn-warning">Register</button>
             </Nav.Link>
-            <Nav.Link href="#deets">
-              <button className="btn btn-light">Register</button>
-            </Nav.Link>
-            <Nav.Link href="#deets">
-              <button className="btn btn-light">Sign Out</button>
-            </Nav.Link>
+            {
+              user.email ?
+                (<Nav.Link >
+                  <button className="btn btn-light" onClick={logOut}>Sign Out</button>
+                </Nav.Link>)
+                :
+                (<Nav.Link as={Link} to="/login">
+                  <button className="btn btn-light">Sign In</button>
+                </Nav.Link>)
+
+            }
+
 
 
 

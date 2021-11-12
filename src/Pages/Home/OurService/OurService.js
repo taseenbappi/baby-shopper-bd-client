@@ -7,10 +7,10 @@ import './OurService.css';
 
 const OurService = () => {
     return (
-        <div className='container-fluid p-3 bg-success'>
+        <div className='container-fluid p-3 bg-success g-4'>
 
-            <div className="row container m-auto">
-                <div className="col-12 col-lg-3 col-md-6 col-sm-12  bg-light  border-start border-3 service rounded-3 border-warning  ">
+            <div className="row container m-auto ">
+                <div className="col-12 col-lg-3 col-md-6 col-sm-12  bg-light  border-start border-3 service rounded-3 border-warning ">
                     <img src={delivery} alt="" className="img-fluid" />
                     <h4>Free Delivery</h4>
                     <p>For all oders over $100</p>
