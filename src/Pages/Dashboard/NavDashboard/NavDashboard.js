@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown, Offcanvas } from 'react-bootstrap';
+import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import './NavDashboard.css';
 
 const NavDashboard = ({ url }) => {
     const { logOut } = useAuth();
@@ -17,7 +18,7 @@ const NavDashboard = ({ url }) => {
                     placement="end"
                 >
                     <Offcanvas.Header closeButton>
-                        <Offcanvas.Title id="offcanvasNavbarLabel">Baby Shopper BD</Offcanvas.Title>
+                        <Offcanvas.Title id="offcanvasNavbarLabel" className="dashboard-title">Baby Shopper BD</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <Nav className="justify-content-end flex-grow-1 pe-3">

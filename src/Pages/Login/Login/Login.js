@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useHistory } from 'react-router-dom';
@@ -13,7 +13,7 @@ const Login = () => {
     if (isLoading) {
         return <Spinner animation="border" />
     }
-    // const [userInfo, setUserInfo] = useState({})
+
     const onSubmit = data => {
         registerUserSignInHangler(data.email, data.password, location, myHistory);
         reset();

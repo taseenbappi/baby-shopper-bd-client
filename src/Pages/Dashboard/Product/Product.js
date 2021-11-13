@@ -5,21 +5,27 @@ import './Product.css';
 const Product = (props) => {
     const { _id, product_title, price, image_url } = props.product;
     const deleteProductHandler = (id) => {
+        const userConfirmation = window.confirm("Are you sure want to delete your Product?");
 
-        axios.delete(`http://localhost:5000/toys/${id}`)
-            .then(response => {
+        if (userConfirmation) {
+            axios.delete(`http://localhost:5000/toys/${id}`)
+                .then(response => {
 
-                if (response.data.deletedCount) {
-                    // setToys(toys);
-                    alert("deleted product successfully");
-                }
-                else {
-                    alert("product not deleted");
-                }
-            })
-            .catch(error => {
-                console.error('There was an error!', error);
-            });
+                    if (response.data.deletedCount) {
+                        // setToys(toys);
+                        alert("deleted product successfully");
+                    }
+                    else {
+                        alert("product not deleted");
+                    }
+                })
+                .catch(error => {
+                    console.error('There was an error!', error);
+                });
+        }
+        else {
+            return;
+        }
     }
 
     return (

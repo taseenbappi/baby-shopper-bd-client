@@ -21,7 +21,7 @@ const Reviews = () => {
     return (
         <div className="container-fluid py-5">
             <h1 className="product-title text-uppercase py-5">Customer <span className="text-warning">Reviews</span> <hr className="w-25  m-auto" /></h1>
-            <div class="row row-cols-1 row-cols-md-3 g-2 container mx-auto">
+            <div className="row row-cols-1 row-cols-md-3 g-2 container mx-auto">
                 {
                     reviews.map(review => <ReviewsCard
                         key={review._id}

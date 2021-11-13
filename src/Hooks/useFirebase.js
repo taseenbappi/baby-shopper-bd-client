@@ -16,8 +16,11 @@ const useFirebase = () => {
 
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(false);
     const [authError, setAuthError] = useState('');
     const auth = getAuth();
+
+
 
     // user email and password register hangler
     const registerHangler = (name, email, password, location, myHistory) => {
@@ -87,6 +90,13 @@ const useFirebase = () => {
 
             }).finally(() => setIsLoading(false));
     }
+    //load a user is admin state
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user?.email}`)
+            .then(res => res.json())
+            .then(data => setIsAdmin(data));
+    }, [user.email])
+    console.log(isAdmin);
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -102,6 +112,8 @@ const useFirebase = () => {
             setIsLoading(false);
         });
     }, [])
+
+
 
     // logout hangler
     const logOut = () => {
