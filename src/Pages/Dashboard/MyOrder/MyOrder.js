@@ -15,8 +15,7 @@ const MyOrder = () => {
             .then(data => setOrders(data))
             .finally(() => setIsLoadingToys(false))
     }, [])
-    console.log(user);
-    console.log(orders);
+
 
     if (isLoadingToys) {
         return <Spinner animation="border" />

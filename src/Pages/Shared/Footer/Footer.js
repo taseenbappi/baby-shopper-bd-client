@@ -1,12 +1,11 @@
 import React from 'react';
 import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from '../../../images/services/money-back-guarantee.png';
 import './Footer.css';
 
 const Footer = () => {
     return (
-        <div className="footer container-fluid p-0">
+        <div className="footer container-fluid p-0 py-5">
             <div className="row align-items-center justify-content-center g-0">
                 {/* footer segment */}
                 <div className="col-lg-6 col-md-6 col-sm-12 col-12 p-3">
