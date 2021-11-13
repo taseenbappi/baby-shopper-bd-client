@@ -15,10 +15,10 @@ const ManageProducts = () => {
 
             </div>
             <div className="container p-3 ">
-                <table class="table">
+                <table className="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            {/* <th scope="col">#</th> */}
                             <th scope="col">Product Title</th>
                             <th scope="col">Product Price</th>
                             <th scope="col">Product Image</th>

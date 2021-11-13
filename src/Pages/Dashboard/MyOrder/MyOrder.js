@@ -14,7 +14,7 @@ const MyOrder = () => {
             .then(res => res.json())
             .then(data => setOrders(data))
             .finally(() => setIsLoadingToys(false))
-    }, [])
+    }, [user.email])
 
 
     if (isLoadingToys) {

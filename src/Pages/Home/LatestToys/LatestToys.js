@@ -6,8 +6,7 @@ import './LatestToys.css';
 
 const LatestToys = () => {
     const [toys, isLoadingToys] = useToys();
-    const latest = toys.slice(1, 7);
-    console.log(latest);
+    const latest = toys.slice(0, 6);
     if (isLoadingToys) {
         return <Spinner animation="border" />;
     }
