@@ -1,6 +1,22 @@
 <h1 align="center">Hi 👋, I'm Taseenul Hoque bappi</h1>
 <h3 align="center">A passionate MERN stack developer from Bangladesh</h3>
 
+<h1 align="center">"Baby Shopper BD" is a baby toys comapany in Bangladesh.</h1>
+<h3 align="center">We are provide our best service and best baby toys</h3>
+
+Please visit our website (https://tourx-e2c55.web.app/).
+
+## Features
+
+- You can buy any type of toys easily.
+- We provide our best service.
+- We are 100% protect your personal information.
+- "Baby Shopper BD" offers its clients an affordable pricing policy.
+- You can easily login with your email & password.
+
+
+
+
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=taseenbappi&label=Profile%20views&color=0e75b6&style=flat" alt="taseenbappi" /> </p>
 
 <p align="left"> <a href="https://twitter.com/taseen_bappi" target="blank"><img src="https://img.shields.io/twitter/follow/taseen_bappi?logo=twitter&style=for-the-badge" alt="taseen_bappi" /></a> </p>
