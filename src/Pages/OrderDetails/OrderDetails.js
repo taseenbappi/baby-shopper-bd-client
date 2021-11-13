@@ -4,9 +4,11 @@ import { useParams } from 'react-router';
 import axios from 'axios';
 import './OrderDetails.css';
 import Navigation from '../Shared/Navigation/Navigation';
+import useAuth from '../../Hooks/useAuth';
 
 
 const OrderDetails = () => {
+    const { user } = useAuth();
     const { toyId } = useParams();
     const [toy, setToy] = useState({});
     const { product_title, price, description, image_url } = toy;
@@ -62,9 +64,9 @@ const OrderDetails = () => {
 
                         <input type="number" {...register("price")} placeholder="Toy Price" className="form-control p-2 m-3 w-75 mx-auto bg-light" required />
 
-                        <input {...register("customer_name")} placeholder="Your name" className="form-control p-2 m-3 w-75 mx-auto bg-light" required />
+                        <input {...register("customer_name")} placeholder="Your name" className="form-control p-2 m-3 w-75 mx-auto bg-light" required value={user.displayName} />
 
-                        <input type="email" {...register("email")} placeholder="Email" className="form-control p-2 m-3 w-75 mx-auto bg-light" required />
+                        <input type="email" {...register("email")} placeholder="Email" className="form-control p-2 m-3 w-75 mx-auto bg-light" required value={user.email} />
 
                         <input type="number" {...register("phone")} placeholder="Your Contact Number" className="form-control p-2 m-3 w-75 mx-auto bg-light" required />
 

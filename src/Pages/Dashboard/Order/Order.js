@@ -4,21 +4,27 @@ import React from 'react';
 const Order = (props) => {
     const { _id, toy_name, price, customer_name } = props.order;
     const deleteOrderHandler = (id) => {
+        const userConfirmation = window.confirm("Are you sure want to delete your order?");
+        if (userConfirmation) {
+            axios.delete(`http://localhost:5000/orders/${id}`)
+                .then(response => {
+                    if (response.data.deletedCount) {
+                        // setToys(toys);
+                        alert("deleted order successfully");
+                    }
+                    else {
+                        alert("order not deleted");
+                    }
+                })
+                .catch(error => {
+                    console.error('There was an error!', error);
+                });
+        }
+        else {
+            return;
+        }
 
-        axios.delete(`http://localhost:5000/orders/${id}`)
-            .then(response => {
 
-                if (response.data.deletedCount) {
-                    // setToys(toys);
-                    alert("deleted order successfully");
-                }
-                else {
-                    alert("order not deleted");
-                }
-            })
-            .catch(error => {
-                console.error('There was an error!', error);
-            });
     }
 
     return (
