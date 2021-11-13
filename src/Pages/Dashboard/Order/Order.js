@@ -7,7 +7,7 @@ const Order = (props) => {
 
         axios.delete(`http://localhost:5000/orders/${id}`)
             .then(response => {
-                console.log(response)
+
                 if (response.data.deletedCount) {
                     // setToys(toys);
                     alert("deleted order successfully");

@@ -19,7 +19,6 @@ const Login = () => {
         reset();
 
     };
-    console.log(authError);
 
     return (
         <div className="container-fluid p-0">

@@ -8,7 +8,7 @@ const Product = (props) => {
 
         axios.delete(`http://localhost:5000/toys/${id}`)
             .then(response => {
-                console.log(response)
+
                 if (response.data.deletedCount) {
                     // setToys(toys);
                     alert("deleted product successfully");
