@@ -9,8 +9,8 @@ Please visit our website (https://tourx-e2c55.web.app/).
 ## Features
 
 - You can buy any type of toys easily.
-- We provide our best service.
-- We are 100% protect your personal information.
+- Your can add comment to show our website
+- You can cancel your order by My Order page
 - "Baby Shopper BD" offers its clients an affordable pricing policy.
 - You can easily login with your email & password.
 
