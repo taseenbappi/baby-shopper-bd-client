@@ -4,7 +4,7 @@ import { Redirect, Route } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
-    const { user, isLoading } = useAuth();
+    const { user, isLoading, isAdmin } = useAuth();
     if (isLoading) {
         return <Spinner animation="border" />
     }
@@ -12,7 +12,7 @@ const AdminRoute = ({ children, ...rest }) => {
         <Route
             {...rest}
             render={({ location }) =>
-                user.email ? (
+                user.email && isAdmin.admin ? (
                     children
                 ) : (
                     <Redirect

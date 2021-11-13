@@ -8,7 +8,7 @@ const Product = (props) => {
         const userConfirmation = window.confirm("Are you sure want to delete your Product?");
 
         if (userConfirmation) {
-            axios.delete(`http://localhost:5000/toys/${id}`)
+            axios.delete(`https://rocky-earth-51630.herokuapp.com/toys/${id}`)
                 .then(response => {
 
                     if (response.data.deletedCount) {

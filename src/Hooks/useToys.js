@@ -6,7 +6,7 @@ const useToys = () => {
 
     useEffect(() => {
         setIsLoadingToys(true)
-        fetch('http://localhost:5000/toys')
+        fetch('https://rocky-earth-51630.herokuapp.com/toys')
             .then(res => res.json())
             .then(data => setToys(data))
             .finally(() => setIsLoadingToys(false))

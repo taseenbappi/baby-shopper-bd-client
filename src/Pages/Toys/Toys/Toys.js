@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import useToys from '../../../Hooks/useToys';
 import Navigation from '../../Shared/Navigation/Navigation';

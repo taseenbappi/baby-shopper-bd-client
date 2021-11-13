@@ -6,7 +6,7 @@ const Order = (props) => {
     const deleteOrderHandler = (id) => {
         const userConfirmation = window.confirm("Are you sure want to delete your order?");
         if (userConfirmation) {
-            axios.delete(`http://localhost:5000/orders/${id}`)
+            axios.delete(`https://rocky-earth-51630.herokuapp.com/orders/${id}`)
                 .then(response => {
                     if (response.data.deletedCount) {
                         // setToys(toys);

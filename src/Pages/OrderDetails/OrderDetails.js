@@ -15,7 +15,7 @@ const OrderDetails = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/placedOrder', data)
+        axios.post('https://rocky-earth-51630.herokuapp.com/placedOrder', data)
             .then(function (response) {
                 if (response.data.insertedId) {
                     alert('Order placed successfully!!');
@@ -31,10 +31,10 @@ const OrderDetails = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/${toyId}`)
+        fetch(`https://rocky-earth-51630.herokuapp.com/toys/${toyId}`)
             .then(res => res.json())
             .then(data => setToy(data))
-    }, [])
+    }, [toyId])
 
     return (
         <div className="container-fluid border p-0">

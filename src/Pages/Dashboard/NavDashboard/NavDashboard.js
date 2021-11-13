@@ -5,7 +5,7 @@ import useAuth from '../../../Hooks/useAuth';
 import './NavDashboard.css';
 
 const NavDashboard = ({ url }) => {
-    const { logOut } = useAuth();
+    const { logOut, user } = useAuth();
 
     return (
         <Navbar bg="dark" variant="dark" expand={false}>
@@ -19,7 +19,9 @@ const NavDashboard = ({ url }) => {
                 >
                     <Offcanvas.Header closeButton>
                         <Offcanvas.Title id="offcanvasNavbarLabel" className="dashboard-title">Baby Shopper BD</Offcanvas.Title>
+
                     </Offcanvas.Header>
+                    <Nav.Link className="fw-bolder fs-3 text-success" >{user.displayName}</Nav.Link>
                     <Offcanvas.Body>
                         <Nav className="justify-content-end flex-grow-1 pe-3">
                             <Nav.Link as={Link} to="/home" className="dashboard-item" >Home</Nav.Link>

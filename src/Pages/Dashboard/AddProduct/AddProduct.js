@@ -8,7 +8,7 @@ const AddProduct = () => {
 
     const onSubmit = data => {
 
-        axios.post('http://localhost:5000/toys', data)
+        axios.post('https://rocky-earth-51630.herokuapp.com/toys', data)
             .then(function (response) {
                 if (response.data.insertedId) {
                     alert('Product added successfully!!');

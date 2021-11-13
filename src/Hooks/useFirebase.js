@@ -20,7 +20,15 @@ const useFirebase = () => {
     const [authError, setAuthError] = useState('');
     const auth = getAuth();
 
+    //load a user is admin state
+    useEffect(() => {
+        fetch(`https://rocky-earth-51630.herokuapp.com/users/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setIsAdmin(data)
 
+            });
+    }, [user?.email])
 
     // user email and password register hangler
     const registerHangler = (name, email, password, location, myHistory) => {
@@ -29,18 +37,20 @@ const useFirebase = () => {
 
             .then((userCredential) => {
                 // Signed in 
-                const user = userCredential.user;
-                const newUser = { displayName: name, email };
+                // const user = userCredential.user;
+                const newUser = { displayName: name, email, role: "user" };
                 setUser(newUser);
 
                 // send user info to database
-                axios.post('http://localhost:5000/users', newUser)
+                axios.post('https://rocky-earth-51630.herokuapp.com/users', newUser)
                     .then(function (response) {
 
                     })
                     .catch(function (error) {
                         console.log(error);
                     });
+
+
                 setAuthError("");
                 const destination = location?.state?.from || "/home";
                 myHistory.replace(destination);
@@ -73,6 +83,7 @@ const useFirebase = () => {
                 const user = userCredential.user;
                 setUser(user);
                 const destination = location?.state?.from || "/home";
+
                 if (email === "admin@admin.com") {
                     myHistory.push('/dashboard');
                 } else {
@@ -90,20 +101,15 @@ const useFirebase = () => {
 
             }).finally(() => setIsLoading(false));
     }
-    //load a user is admin state
-    useEffect(() => {
-        fetch(`http://localhost:5000/users/${user?.email}`)
-            .then(res => res.json())
-            .then(data => setIsAdmin(data));
-    }, [user.email])
-    console.log(isAdmin);
+
+
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 // User is signed in, see docs for a list of available properties
                 // https://firebase.google.com/docs/reference/js/firebase.User
-                const uid = user.uid;
+                // const uid = user.uid;
                 setUser(user);
                 // ...
             } else {
@@ -111,7 +117,8 @@ const useFirebase = () => {
             }
             setIsLoading(false);
         });
-    }, [])
+    }, [auth])
+
 
 
 
@@ -134,7 +141,8 @@ const useFirebase = () => {
         logOut,
         user,
         authError,
-        isLoading
+        isLoading,
+        isAdmin
     };
 
 }

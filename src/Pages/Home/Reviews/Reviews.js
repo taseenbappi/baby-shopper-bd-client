@@ -9,7 +9,7 @@ const Reviews = () => {
 
     useEffect(() => {
         setIsLoadingToys(true)
-        fetch("http://localhost:5000/reviews")
+        fetch("https://rocky-earth-51630.herokuapp.com/reviews")
             .then(res => res.json())
             .then(data => setReviews(data))
             .finally(() => setIsLoadingToys(false))

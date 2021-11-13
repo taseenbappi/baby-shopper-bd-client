@@ -10,7 +10,7 @@ const MyOrder = () => {
 
     useEffect(() => {
         setIsLoadingToys(true)
-        fetch(`http://localhost:5000/placedOrder?email=${user.email}`)
+        fetch(`https://rocky-earth-51630.herokuapp.com/placedOrder?email=${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
             .finally(() => setIsLoadingToys(false))
